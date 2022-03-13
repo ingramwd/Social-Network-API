@@ -51,6 +51,7 @@ const ThoughtSchema = new Schema(
     }
 );
 
+//used to get the count of reactions on a comment
 ThoughtSchema.virtual('reactionCount').get(function () {
     return this.reactions.length;
 });
