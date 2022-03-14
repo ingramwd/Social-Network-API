@@ -34,12 +34,12 @@ const UserSchema = new Schema(
         id: false
     }
 );
+const User = model('User', UserSchema);
 
 //to get the length of the fiends array field on query
 UserSchema.virtual('friendCount').get(function () {
     return this.friends.length
 });
 
-const User = model('User', UserSchema);
 
-model.exports = User;
+module.exports = User;
